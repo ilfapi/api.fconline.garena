@@ -222,7 +222,7 @@ app.get("/api2/search", async (req, res) => {
                 'accept-language': 'en-US,en;q=0.9,vi;q=0.8', 
                 'dnt': '1', 
                 'priority': 'u=1, i', 
-                'referer': 'https://fo4s.com', 
+                'referer': 'https://fo4s.com/?sort=ovr-desc&col1=sprintspeed&col2=stamina&col3=strength&q=Diego+Maradona', 
                 'sec-ch-ua': '"Chromium";v="136", "Microsoft Edge";v="136", "Not.A/Brand";v="99"', 
                 'sec-ch-ua-mobile': '?0', 
                 'sec-ch-ua-platform': '"Windows"', 
