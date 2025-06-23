@@ -216,13 +216,13 @@ app.get("/api2/search", async (req, res) => {
     let config = {
         method: 'get',
         maxBodyLength: Infinity,
-        url: `https://fo4s.com/ajax?action=search_player&input=%7B%22pos%22%3A%5B%5D%2C%22class%22%3A%5B%5D%2C%22league%22%3A%22%22%2C%22club%22%3A%22%22%2C%22nation%22%3A%22%22%2C%22team%22%3A%22%22%2C%22trait%22%3A%5B%22%22%2C%22%22%2C%22%22%5D%2C%22ig_trait%22%3A%5B%5D%2C%22attr%22%3A%5B%22%22%2C%22%22%2C%22%22%5D%2C%22attr_value%22%3A%5B%7B%7D%2C%7B%7D%2C%7B%7D%5D%2C%22lfoot%22%3A%22%22%2C%22rfoot%22%3A%22%22%2C%22month%22%3A%22%22%2C%22day%22%3A%22%22%2C%22build%22%3A%5B%5D%2C%22skill%22%3A%22%22%2C%22fame%22%3A%22%22%2C%22sort%22%3A%22ovr-desc%22%2C%22col1%22%3A%22sprintspeed%22%2C%22col2%22%3A%22stamina%22%2C%22col3%22%3A%22strength%22%2C%22q%22%3A%22${encodeURIComponent(playerName)}%22%7D`,
+        url: `https://fo4s.com/ajax?action=search_player&input=%7B%22pos%22%3A%5B%5D%2C%22class%22%3A%5B%5D%2C%22league%22%3A%22%22%2C%22club%22%3A%22%22%2C%22nation%22%3A%22%22%2C%22team%22%3A%22%22%2C%22trait%22%3A%5B%22%22%2C%22%22%2C%22%22%5D%2C%22ig_trait%22%3A%5B%5D%2C%22attr%22%3A%5B%22%22%2C%22%22%2C%22%22%5D%2C%22attr_value%22%3A%5B%7B%7D%2C%7B%7D%2C%7B%7D%5D%2C%22lfoot%22%3A%22%22%2C%22rfoot%22%3A%22%22%2C%22month%22%3A%22%22%2C%22day%22%3A%22%22%2C%22build%22%3A%5B%5D%2C%22skill%22%3A%22%22%2C%22fame%22%3A%22%22%2C%22sort%22%3A%22ovr-desc%22%2C%22col1%22%3A%22sprintspeed%22%2C%22col2%22%3A%22stamina%22%2C%22col3%22%3A%22strength%22%2C%22q%22%3A%22Diego%20Maradona%22%7D`,
         headers: { 
                 'accept': 'application/json, text/plain, */*', 
                 'accept-language': 'en-US,en;q=0.9,vi;q=0.8', 
                 'dnt': '1', 
                 'priority': 'u=1, i', 
-                'referer': 'https://fo4s.com/?sort=ovr-desc&col1=sprintspeed&col2=stamina&col3=strength&q=Diego+Maradona', 
+                'referer': 'https://fo4s.com', 
                 'sec-ch-ua': '"Chromium";v="136", "Microsoft Edge";v="136", "Not.A/Brand";v="99"', 
                 'sec-ch-ua-mobile': '?0', 
                 'sec-ch-ua-platform': '"Windows"', 
