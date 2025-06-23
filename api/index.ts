@@ -4,6 +4,20 @@ const axios = require('axios');
 const cors = require('cors'); // Thêm dòng này
 app.use(cors()); // Thêm dòng này để bật CORS cho tất cả các route
 
+const allowedOrigins = [
+  'https://fifa-transfer-calculator-pro.lovable.app',
+  'http://localhost:3000'
+];
+app.use(cors({
+  origin: function(origin, callback){
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+}));
+
 app.get("/", (req, res) => res.send("Express on Vercel"));
 
 app.get("/api/hof/get", (req, res) => {
