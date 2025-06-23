@@ -202,6 +202,36 @@ app.get("/api2/playername", async (req, res) => {
         });
 });
 
+// API để lấy dữ liệu cầu thủ theo tên sử dụng fo4s.com
+app.get("/api2/search", async (req, res) => {
+    const playerName = req.query.q;
+    console.log(`IP: ${req.ip}, DateTime: ${new Date().toISOString()}, User-Agent: ${req.headers['user-agent']}, Query: ${playerName}`);
+
+    if (!playerName) {
+        return res.status(400).send({ status: "fail", message: "Missing query parameter 'q'" });
+    }
+
+    const url = `https://fo4s.com/ajax?action=search_player&input=${encodeURIComponent(JSON.stringify({ q: playerName }))}`;
+
+    try {
+        const response = await axios.get(url, {
+            headers: {
+                'accept': 'application/json, text/plain, */*',
+                'user-agent': req.headers['user-agent'] || 'Mozilla/5.0'
+            }
+        });
+        console.log(`IP: ${req.ip}, DateTime: ${new Date().toISOString()}, User-Agent: ${req.headers['user-agent']}, Response Data: ${JSON.stringify(response.data)}`);
+        res.status(200).send({
+            status: "successful",
+            payload: response.data
+        });
+    } catch (error) {
+        console.error(`IP: ${req.ip}, DateTime: ${new Date().toISOString()}, User-Agent: ${req.headers['user-agent']}, Error: ${error.message}`);
+        res.status(400).send({ status: "fail" });
+    }
+});
+
+
 
 app.post("/api2/:id", (req, res) => {
     // This endpoint retrieves player data by ID
