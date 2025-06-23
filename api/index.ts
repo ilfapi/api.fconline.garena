@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 const axios = require('axios');
+const cors = require('cors'); // Thêm dòng này
+app.use(cors()); // Thêm dòng này để bật CORS cho tất cả các route
 
 app.get("/", (req, res) => res.send("Express on Vercel"));
 
