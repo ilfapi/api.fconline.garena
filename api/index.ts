@@ -6,6 +6,7 @@ app.use(cors()); // Thêm dòng này để bật CORS cho tất cả các route
 
 const allowedOrigins = [
   'https://fifa-transfer-calculator-pro.lovable.app',
+  'https://fco-transfer-tax-calculator.vercel.app',
   'http://localhost:8080',
   'http://172.168.12.102:8080'
 ];
